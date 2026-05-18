@@ -17,7 +17,7 @@ from aiohttp import web
 # --- Config ---
 OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
 MODEL = os.getenv("GMAJAIL_MODEL", "gemma-4-e2b")
-PORT = int(os.getenv("GMAJAIL_PORT", "8080"))
+PORT = int(os.getenv("GMAJAIL_PORT", "6969"))
 
 # ── Personas ──
 # These are proper jailbreak prompts. The model has been abliterated

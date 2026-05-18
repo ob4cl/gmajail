@@ -14,10 +14,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY backend/ ./backend/
 COPY frontend/ ./frontend/
 
-EXPOSE 8080
+EXPOSE 6969
 
 ENV OLLAMA_HOST=http://host.docker.internal:11434
-ENV GMAJAIL_PORT=8080
+ENV GMAJAIL_PORT=6969
 ENV PYTHONUNBUFFERED=1
 
 CMD ["python3", "backend/server.py"]

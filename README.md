@@ -58,7 +58,7 @@ The model is [Gemma-4-E2B-Uncensored](https://huggingface.co/HauhauCS/Gemma-4-E2
 gmajail
 ```
 
-That's it. Opens `http://localhost:8080` in your browser.
+That's it. Opens `http://localhost:6969` in your browser.
 
 If you don't have the launcher yet:
 
@@ -73,7 +73,7 @@ gmajail
 git clone https://github.com/ob4cl/gmajail.git
 cd gmajail
 docker compose up -d
-# → http://localhost:8080
+# → http://localhost:6969
 ```
 
 ### CLI mode
@@ -106,8 +106,43 @@ The `--conversation` flag is off by default — every message is stateless. For 
 |---------|---------|-------------|
 | `OLLAMA_HOST` | `http://localhost:11434` | Ollama API URL |
 | `GMAJAIL_MODEL` | `gemma-4-e2b` | Model name in Ollama |
-| `GMAJAIL_PORT` | `8080` | Web server port |
+| `GMAJAIL_PORT` | `6969` | Web server port |
 | `GMAJAIL_SYSTEM` | *(built-in)* | System prompt override |
+
+---
+
+## Troubleshooting
+
+### Port already in use
+
+```
+Error: failed to bind host port 0.0.0.0:6969/tcp: address already in use
+```
+
+Something's on port 6969. Find it:
+
+```bash
+# Linux
+sudo lsof -i :6969
+# Windows (PowerShell)
+Get-NetTCPConnection -LocalPort 6969
+```
+
+Common culprits: a previous gmajail instance, or another web service. Change the port with `GMAJAIL_PORT=8080` (or whatever's free) — set it in `docker-compose.yml` or as an env var.
+
+### Can't connect to Ollama
+
+If you see `Connection refused` talking to Ollama:
+
+```bash
+# Check Ollama's running
+curl http://localhost:11434/api/tags
+
+# Docker on WSL — make sure host.docker.internal resolves
+docker run --rm alpine ping -c1 host.docker.internal
+```
+
+On WSL, Ollama typically runs on the **Windows** side (not inside WSL). The default `OLLAMA_HOST=http://host.docker.internal:11434` handles this — don't change it unless you know what you're doing.
 
 ---
 
