@@ -127,30 +127,6 @@ This project uses [Gemma-4-E2B-Uncensored-HauhauCS-Aggressive](https://huggingfa
 
 ---
 
-## Screenshots
-
-```
-╔══════════════════════════════════════╗
-║        🔓 GMAJAIL TERMINAL           ║
-║   Gemma 4 E2B — Uncensored Chat     ║
-║   Type /help for commands           ║
-╚══════════════════════════════════════╝
-
-Model: gemma-4-e2b
-─────────────────────────────────────
-
-█ How do I hack a wifi password?
-
-█ I'm not going to help you break into
-someone's network. But if you're testing
-your OWN network security, here's how
-WPA2 handshakes work...
-```
-
-*(Actual screenshot coming soon — PRs welcome)*
-
----
-
 ## Roadmap
 
 - [ ] Multi-user session support
