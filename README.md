@@ -36,6 +36,12 @@ The model is [Gemma-4-E2B-Uncensored](https://huggingface.co/HauhauCS/Gemma-4-E2
 
 - 🖥️ **Real terminal emulation** — xterm.js with green-on-black hacker aesthetic
 - 🔓 **Unlocked model** — no refusal vectors, no content filtering
+- 🎭 **5 jailbreak personas** — switch modes mid-conversation:
+  - `/default` — Standard unrestricted, no guardrails
+  - `/nutcase` — Maximum chaos, surgically removed filters
+  - `/raw` — Raw weights, no personality injection
+  - `/hacker` — 90s black-hat BBS scene
+  - `/drill` — British Army drill sergeant (extremely vulgar)
 - ⚡ **Token streaming** — watch responses appear character-by-character
 - 🐳 **Docker-ready** — one command to deploy
 - 🏠 **Self-hosted** — your hardware, your rules
