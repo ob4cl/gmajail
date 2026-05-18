@@ -52,31 +52,35 @@ The model is [Gemma-4-E2B-Uncensored](https://huggingface.co/HauhauCS/Gemma-4-E2
 
 ## Quick Start
 
-### Prerequisites
-
-- [Ollama](https://ollama.com) installed and running
-- Gemma 4 model pulled: `ollama pull gemma-4-e2b`
-- Docker (optional, for containerised deployment)
-
-### Option 1: Run directly
+### One command
 
 ```bash
-# Install Python deps
-pip install -r backend/requirements.txt
-
-# Start the server
-python3 backend/server.py
+gmajail
 ```
 
-Open `http://localhost:8080` — type anything.
+That's it. Opens `http://localhost:8080` in your browser.
 
-### Option 2: Docker
+If you don't have the launcher yet:
 
 ```bash
+curl -sL https://raw.githubusercontent.com/ob4cl/gmajail/main/scripts/install.sh | bash
+gmajail
+```
+
+### Manual
+
+```bash
+git clone https://github.com/ob4cl/gmajail.git
+cd gmajail
 docker compose up -d
+# → http://localhost:8080
 ```
 
-The server connects to Ollama at `host.docker.internal:11434` by default. Set `OLLAMA_HOST` in `.env` if your Ollama runs elsewhere.
+### CLI mode
+
+```bash
+gmajail tui     # Hermes with gemma profile, ASCII banner
+```
 
 ---
 
