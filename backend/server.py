@@ -99,7 +99,7 @@ async def websocket_handler(request: web.Request) -> web.WebSocketResponse:
 
     session_id = request.query.get("session", "default")
     if session_id not in sessions:
-        sessions[session_id] = {"history": [], "persona": "default"}
+        sessions[session_id] = {"history": [], "persona": "nutcase"}
 
     # Send MOTD with current persona badge
     persona = sessions[session_id]["persona"]
