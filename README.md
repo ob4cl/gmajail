@@ -79,7 +79,7 @@ docker compose up -d
 ### CLI mode
 
 ```bash
-gmajail tui     # Hermes with gemma profile, ASCII banner
+gmajail tui     # Standalone TUI — no Hermes, no browser, just you and Gemma
 ```
 
 ---
