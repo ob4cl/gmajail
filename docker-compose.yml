@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  gmajail:
+    build: .
+    container_name: gmajail
+    ports:
+      - "8080:8080"
+    environment:
+      - OLLAMA_HOST=${OLLAMA_HOST:-http://host.docker.internal:11434}
+      - GMAJAIL_PORT=8080
+      - GMAJAIL_MODEL=${GMAJAIL_MODEL:-gemma-4-e2b}
+    restart: unless-stopped
