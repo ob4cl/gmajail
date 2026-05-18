@@ -1,1 +1,2 @@
-aiohttp>=3.9.0
+aiohttp==3.13.5 \
+    --hash=sha256:b18f31b80d5a33661e08c89e202edabf1986e9b49c42b4504371daeaa11b47c1
